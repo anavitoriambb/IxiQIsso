@@ -22,6 +22,7 @@ $(document).ready(function() {
                 })
 
                 $('#modal-especie').modal('hide')
+                $('#ESPECIE').DataTable().ajax.reload()
             }
         })
 

@@ -36,7 +36,6 @@
                 );
             }
         } else{
-            // Se minha variável operação estiver vazia então executa o update do registro
             try{
                 $stmt = $pdo->prepare('UPDATE ESPECIE SET DESCRICAO = :descricao WHERE IDESPECIE = :id');
                 $stmt->execute(array(
@@ -56,5 +55,4 @@
         }
     }
 
-    // Converter um array de dados para a representação JSON
     echo json_encode($dados);
