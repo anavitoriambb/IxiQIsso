@@ -1,14 +1,13 @@
 $(document).ready(function() {
 
-    //$('#ESPECIE').on('click', 'button.btn-view', function(e) {
-    $('#table-especie').on('click', 'button.btn-view', function(e) {
+    $('#table-especie').on('click', 'button.btn-edit', function(e) {
 
         e.preventDefault()
 
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-title').append('Visualização das especies')
+        $('.modal-title').append('Edição das especies')
 
         let IDESPECIE = `IDESPECIE=${$(this).attr('id')}`
 
@@ -22,10 +21,9 @@ $(document).ready(function() {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/especie/view/form-especie.html', function() {
                         $('#DESCRICAO').val(dado.dados.DESCRICAO)
-                        $('#DESCRICAO').attr('readonly', 'true')
+                        $('#IDESPECIE').val(dado.dados.IDESPECIE)
                     })
-                    $('.btn-save').hide()
-                        //$('#ESPECIE').modal('show')
+                    $('.btn-save').show()
                     $('#modal-especie').modal('show')
                 } else {
                     Swal.fire({

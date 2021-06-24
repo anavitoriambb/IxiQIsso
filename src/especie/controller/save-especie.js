@@ -22,9 +22,10 @@ $(document).ready(function() {
                 })
 
                 $('#modal-especie').modal('hide')
-                $('#ESPECIE').DataTable().ajax.reload()
+                    //$('#ESPECIE').DataTable().ajax.reload()
+                $('#table-especie').DataTable().ajax.reload()
+
             }
         })
-
     })
 })
