@@ -6,7 +6,7 @@
 
     $colunas = $requestData['columns'];
 
-    $sql = "SELECT IDESPECIE, NOME FROM ESPECIE WHERE 1=1 ";
+    $sql = "SELECT IDESPECIE, DESCRICAO FROM ESPECIE WHERE 1=1 ";
 
     $resultado = $pdo->query($sql);
     $qtdeLinhas = $resultado->rowCount();
@@ -14,7 +14,7 @@
     $filtro = $requestData['search']['value'];
     if( !empty( $filtro ) ){
         $sql .= " AND (IDESPECIE LIKE '$filtro%' ";
-        $sql .= " OR NOME LIKE '$filtro%') ";
+        $sql .= " OR DESCRICAO LIKE '$filtro%') ";
     }
     
     $resultado = $pdo->query($sql);

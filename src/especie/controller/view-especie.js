@@ -8,7 +8,7 @@ $(document).ready(function() {
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-title').append('Visualização das especies')
+        $('.modal-title').append('Visualização das espécies')
 
         let IDESPECIE = `IDESPECIE=${$(this).attr('id')}`
 
@@ -27,14 +27,14 @@ $(document).ready(function() {
                     $('.btn-save').hide()
                         //$('#ESPECIE').modal('show')
                     $('#modal-especie').modal('show')
-                } else {
-                    Swal.fire({
-                        title: 'TCC',
-                        text: dado.mensagem,
-                        type: dado.tipo,
-                        confirmButtonText: 'OK'
-                    })
-                }
+                } //else {
+                //Swal.fire({
+                //  title: 'TCC',
+                //  text: dado.mensagem,
+                //  type: dado.tipo,
+                //    confirmButtonText: 'OK'
+                //  })
+                //}
             }
         })
 

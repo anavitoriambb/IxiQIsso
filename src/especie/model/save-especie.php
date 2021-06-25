@@ -15,15 +15,15 @@
         );
     } else{
         // Caso a variável exista e tenha conteúdo, vamos gerar uma requisição
-        $IDESPECIE = isset($requestData['IDESPECIE']) ? $requestData['IDESPECIE'] : '';
+        $ID = isset($requestData['IDESPECIE']) ? $requestData['IDESPECIE'] : '';
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
 
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
             try{
-                $stmt = $pdo->prepare('INSERT INTO ESPECIE (DESCRICAO) VALUES (:descricao)');
+                $stmt = $pdo->prepare('INSERT INTO ESPECIE (DESCRICAO) VALUES (:a)');
                 $stmt->execute(array(
-                    ':descricao' => utf8_decode($requestData['DESCRICAO'])
+                    ':a' => utf8_decode($requestData['DESCRICAO'])
                 ));
                 $dados = array(
                     "tipo" => "success",
@@ -37,10 +37,10 @@
             }
         } else{
             try{
-                $stmt = $pdo->prepare('UPDATE ESPECIE SET DESCRICAO = :descricao WHERE IDESPECIE = :id');
+                $stmt = $pdo->prepare('UPDATE ESPECIE SET DESCRICAO = :a WHERE IDESPECIE = :id');
                 $stmt->execute(array(
-                    ':id' => $IDESPECIE,
-                    ':descricao' => utf8_decode($requestData['DESCRICAO'])
+                    ':id' => $ID,
+                    ':a' => utf8_decode($requestData['DESCRICAO'])
                 ));
                 $dados = array(
                     "tipo" => "success",

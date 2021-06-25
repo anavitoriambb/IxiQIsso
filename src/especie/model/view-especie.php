@@ -9,14 +9,14 @@
     $resultado = $pdo->query($sql);
 
     if($resultado){
-        $dadosEixo = array();
+        $reusltQuery = array();
         while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
-            $dadosEixo = array_map('utf8_encode', $row);
+            $reusltQuery = array_map('utf8_encode', $row);
         }
         $dados = array(
             'tipo' => 'success',
             'mensagem' => '',
-            'dados' => $dadosEixo
+            'dados' => $reusltQuery
         );
     } else {
         $dados = array(

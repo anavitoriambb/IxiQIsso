@@ -24,6 +24,7 @@ $(document).ready(function() {
                         $('#IDESPECIE').val(dado.dados.IDESPECIE)
                     })
                     $('.btn-save').show()
+                    $('.btn-save').removeAttr('data-operation')
                     $('#modal-especie').modal('show')
                 } else {
                     Swal.fire({
