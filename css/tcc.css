@@ -1,9 +1,7 @@
 .bg-footer {
-    background: #e67817;
-    /*background-repeat: no-repeat;
-    background-size: cover;
-    height: 150px;
-    width: 100% 100%;
-    text-align: center;
-    justify-content: center;*/
+    background: linear-gradient(to top, #e67817 50%, #cf8b4f 100%);
+}
+
+.bg-jumbo {
+    background: linear-gradient(to bottom, #e67817 13%, #cf8b4f 100%);
 }

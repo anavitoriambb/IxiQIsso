@@ -1,7 +1,7 @@
 <?php
 
     // Instanciar o nosso banco de dados
-    include('../../conexao/conn.php')
+    include('../../conexao/conn.php');
 
     // Coleta do ID que será excluído em nosso banco de dados
     $IDESPECIE = $_REQUEST['IDESPECIE'];
