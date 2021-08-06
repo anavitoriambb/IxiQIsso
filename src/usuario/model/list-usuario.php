@@ -6,7 +6,7 @@
 
     $colunas = $requestData['columns'];
 
-    $sql = "SELECT IDUSUARIO, LOGIN FROM USUARIO WHERE 1=1 ";
+    $sql = "SELECT IDUSUARIO, LOGINN FROM USUARIO WHERE 1=1 ";
 
     $resultado = $pdo->query($sql);
     $qtdeLinhas = $resultado->rowCount();
@@ -14,7 +14,7 @@
     $filtro = $requestData['search']['value'];
     if( !empty( $filtro ) ){
         $sql .= " AND (IDUSUARIO LIKE '$filtro%' ";
-        $sql .= " OR LOGIN LIKE '$filtro%') ";
+        $sql .= " OR LOGINN LIKE '$filtro%') ";
     }
     
     $resultado = $pdo->query($sql);

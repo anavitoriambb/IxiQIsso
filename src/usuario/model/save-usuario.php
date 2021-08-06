@@ -7,7 +7,7 @@
     $requestData = $_REQUEST;
 
     // Verificação dos campos obrigatórios do formulário
-    if(empty($requestData['LOGIN'])){
+    if(empty($requestData['LOGINN'])){
         // Caso a variável venha gerar um retorno com erro
         $dados = array(
             "tipo" => "error",
@@ -21,9 +21,9 @@
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
             try{
-                $stmt = $pdo->prepare('INSERT INTO USUARIO (LOGIN) VALUES (:a)');
+                $stmt = $pdo->prepare('INSERT INTO USUARIO (LOGINN) VALUES (:a)');
                 $stmt->execute(array(
-                    ':a' => utf8_decode($requestData['LOGIN'])
+                    ':a' => utf8_decode($requestData['LOGINN'])
                 ));
                 $dados = array(
                     "tipo" => "success",
@@ -37,10 +37,10 @@
             }
         } else{
             try{
-                $stmt = $pdo->prepare('UPDATE USUARIO SET LOGIN = :a WHERE IDUSUARIO = :id');
+                $stmt = $pdo->prepare('UPDATE USUARIO SET LOGINN = :a WHERE IDUSUARIO = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => utf8_decode($requestData['LOGIN'])
+                    ':a' => utf8_decode($requestData['LOGINN'])
                 ));
                 $dados = array(
                     "tipo" => "success",

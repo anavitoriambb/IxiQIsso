@@ -21,8 +21,8 @@ $(document).ready(function() {
             success: function(dado) {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/usuario/view/form-usuario.html', function() {
-                        $('#LOGIN').val(dado.dados.LOGIN)
-                        $('#LOGIN').attr('readonly', 'true')
+                        $('#LOGINN').val(dado.dados.LOGINN)
+                        $('#LOGINN').attr('readonly', 'true')
                     })
                     $('.btn-save').hide()
                         //$('#ESPECIE').modal('show')

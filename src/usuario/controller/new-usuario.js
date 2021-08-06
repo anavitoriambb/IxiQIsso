@@ -7,7 +7,7 @@ $(document).ready(function() {
 
         $('.modal-title').append('Adicionar novo usuário')
 
-        $('.modal-body').load('src/usario/view/form-usuario.html')
+        $('.modal-body').load('src/usuario/view/form-usuario.html')
 
         $('.btn-save').show()
 

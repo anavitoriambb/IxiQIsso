@@ -14,7 +14,7 @@ $(document).ready(function() {
                 "className": 'text-center'
             },
             {
-                "data": 'LOGIN',
+                "data": 'LOGINN',
                 "className": 'text-center'
             },
             {
