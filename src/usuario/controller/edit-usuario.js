@@ -21,7 +21,7 @@ $(document).ready(function() {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/usuario/view/form-usuario.html', function() {
                         $('#LOGINN').val(dado.dados.LOGINN)
-                        $('#IDUSUARIO').val(dado.dados.LOGINN)
+                        $('#IDUSUARIO').val(dado.dados.IDUSUARIO)
                     })
                     $('.btn-save').show()
                     $('.btn-save').removeAttr('data-operation')
