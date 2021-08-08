@@ -2,7 +2,7 @@
 
     include('../../conexao/conn.php');
 
-    $IDESPECIE = $_REQUEST['IDUSUARIO'];
+    $IDUSUARIO = $_REQUEST['IDUSUARIO'];
 
     $sql = "SELECT * FROM USUARIO WHERE IDUSUARIO = $IDUSUARIO";
 

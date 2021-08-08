@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('.modal-body').empty()
         $('.modal-title').append('Edição dos animais')
 
-        let IDUSUARIO = `IDANIMAIS=${$(this).attr('id')}`
+        let IDANIMAIS = `IDANIMAIS=${$(this).attr('id')}`
 
         $.ajax({
             type: 'POST',

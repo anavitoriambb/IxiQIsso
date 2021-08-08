@@ -33,6 +33,7 @@ $(document).ready(function() {
                     <button id="${data}" class="btn btn-danger btn-sm btn-delete"><i class="mdi mdi-trash-can-outline"></i></button>
                     `
                 }
+
             }
         ]
     })

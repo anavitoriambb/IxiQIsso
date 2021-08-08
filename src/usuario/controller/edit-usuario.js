@@ -15,12 +15,13 @@ $(document).ready(function() {
             type: 'POST',
             dataType: 'json',
             assync: true,
-            data: IDESPECIE,
+            data: IDUSUARIO,
             url: 'src/usuario/model/view-usuario.php',
             success: function(dado) {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/usuario/view/form-usuario.html', function() {
                         $('#LOGINN').val(dado.dados.LOGINN)
+                        $('#SENHA').val(dado.dados.SENHA)
                         $('#IDUSUARIO').val(dado.dados.IDUSUARIO)
                     })
                     $('.btn-save').show()

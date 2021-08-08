@@ -23,6 +23,9 @@ $(document).ready(function() {
                     $('.modal-body').load('src/usuario/view/form-usuario.html', function() {
                         $('#LOGINN').val(dado.dados.LOGINN)
                         $('#LOGINN').attr('readonly', 'true')
+                        $('#SENHA').val(dado.dados.SENHA)
+                        $('#SENHA').attr('readonly', 'true')
+
                     })
                     $('.btn-save').hide()
                         //$('#ESPECIE').modal('show')

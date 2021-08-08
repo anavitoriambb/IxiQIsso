@@ -2,7 +2,7 @@
 
     include('../../conexao/conn.php');
 
-    $IDESPECIE = $_REQUEST['IDANIMAIS'];
+    $IDANIMAIS = $_REQUEST['IDANIMAIS'];
 
     $sql = "SELECT * FROM ANIMAIS WHERE IDANIMAIS = $IDANIMAIS";
 

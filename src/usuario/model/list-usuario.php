@@ -6,7 +6,8 @@
 
     $colunas = $requestData['columns'];
 
-    $sql = "SELECT IDUSUARIO, LOGINN FROM USUARIO WHERE 1=1 ";
+    $sql = "SELECT IDUSUARIO, SENHA, LOGINN FROM USUARIO WHERE 1=1 ";
+    
 
     $resultado = $pdo->query($sql);
     $qtdeLinhas = $resultado->rowCount();

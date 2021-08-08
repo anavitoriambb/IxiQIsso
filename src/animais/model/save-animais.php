@@ -15,15 +15,15 @@
         );
     } else{
         // Caso a variável exista e tenha conteúdo, vamos gerar uma requisição
-        $ID = isset($requestData['IDANIMAIS']) ? $requestData['IDANIMAIS'] : '';
+        $IDANIMAIS = isset($requestData['IDANIMAIS']) ? $requestData['IDANIMAIS'] : '';
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
 
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
             try{
-                $stmt = $pdo->prepare('INSERT INTO ANIMAIS (PORTE) VALUES (:a)');
+                $stmt = $pdo->prepare('INSERT INTO ANIMAIS (PORTE) VALUES (:porte)');
                 $stmt->execute(array(
-                    ':a' => utf8_decode($requestData['PORTE'])
+                    ':porte' => utf8_decode($requestData['PORTE'])
                 ));
                 $dados = array(
                     "tipo" => "success",
@@ -39,8 +39,8 @@
             try{
                 $stmt = $pdo->prepare('UPDATE ANIMAIS SET PORTE = :a WHERE IDANIMAIS = :id');
                 $stmt->execute(array(
-                    ':id' => $ID,
-                    ':a' => utf8_decode($requestData['PORTE'])
+                    ':id' => $IDANIMAIS,
+                    ':porte' => utf8_decode($requestData['PORTE'])
                 ));
                 $dados = array(
                     "tipo" => "success",
