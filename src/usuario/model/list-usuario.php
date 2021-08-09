@@ -34,7 +34,7 @@
         $dados[] = array_map('utf8_encode', $row);
     }
 
-    $json_data = array(
+    $json_data = Array(
         "draw" => intval($requestData['draw']),
         "recordsTotal" => intval($qtdeLinhas),
         "recordsFiltered" => intval($totalFiltrados),
