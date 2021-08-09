@@ -22,7 +22,6 @@ $(document).ready(function() {
                 })
 
                 $('#modal-usuario').modal('hide')
-                    //$('#ESPECIE').DataTable().ajax.reload()
                 $('#table-usuario').DataTable().ajax.reload()
 
             }
