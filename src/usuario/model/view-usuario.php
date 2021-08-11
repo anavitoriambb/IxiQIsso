@@ -2,9 +2,9 @@
 
     include('../../conexao/conn.php');
 
-    $IDUSUARIO = $_REQUEST['IDUSUARIO'];
+    $ID = $_REQUEST['IDUSUARIO'];
 
-    $sql = "SELECT * FROM USUARIO WHERE IDUSUARIO = $IDUSUARIO";
+    $sql = "SELECT * FROM USUARIO WHERE IDUSUARIO = $ID";
 
     $resultado = $pdo->query($sql);
 

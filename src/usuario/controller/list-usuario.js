@@ -17,10 +17,7 @@ $(document).ready(function() {
                 "data": 'LOGINN',
                 "className": 'text-center'
             },
-            {
-                "data": 'SENHA',
-                "className": 'text-center'
-            },
+
             {
                 "data": 'IDUSUARIO',
                 "orderable": false,
