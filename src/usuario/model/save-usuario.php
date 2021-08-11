@@ -1,6 +1,6 @@
 <?php
 
-    // Obter nossa conexão com banco de dados
+    // Obter niiossa conexão com banco de dados
     include('../../conexao/conn.php');
 
     // Obter os dados enviados do formulário via REQUEST
