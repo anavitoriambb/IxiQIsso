@@ -28,16 +28,8 @@ $(document).ready(function() {
 
                     })
                     $('.btn-save').hide()
-                        //$('#ESPECIE').modal('show')
                     $('#modal-usuario').modal('show')
-                } //else {
-                //Swal.fire({
-                //  title: 'TCC',
-                //  text: dado.mensagem,
-                //  type: dado.tipo,
-                //    confirmButtonText: 'OK'
-                //  })
-                //}
+                } 
             }
         })
 
