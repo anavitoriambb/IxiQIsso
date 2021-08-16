@@ -4,10 +4,10 @@
     include('../../conexao/conn.php');
 
     // Coleta do ID que será excluído em nosso banco de dados
-    $IDANIMAIS = $_REQUEST['IDANIMAIS'];
+    $ID = $_REQUEST['IDANIMAIS'];
 
     // Gerar uma querie de exclusão no banco de dados
-    $sql = "DELETE FROM ANIMAIS WHERE IDANIMAIS= $IDANIMAIS";
+    $sql = "DELETE FROM ANIMAIS WHERE IDANIMAIS= $ID";
 
     // Executar a querie 
     $resultado = $pdo->query($sql);

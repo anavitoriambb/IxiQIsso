@@ -4,7 +4,7 @@ $(document).ready(function() {
 
         e.preventDefault()
 
-        let IDUSUARIO = `IDANIMAIS=${$(this).attr('id')}`
+        let IDANIAMIS = `IDANIMAIS=${$(this).attr('id')}`
 
         Swal.fire({
             title: 'Refúgio Pet Lins',
@@ -21,7 +21,7 @@ $(document).ready(function() {
                     type: 'POST',
                     dataType: 'json',
                     assync: true,
-                    data: IDUSUARIO,
+                    data: IDANIMAIS,
                     url: 'src/animais/model/delete-animais.php',
                     success: function(dados) {
                         Swal.fire({
