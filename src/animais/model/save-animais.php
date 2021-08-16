@@ -21,9 +21,9 @@
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
             try{
-                $stmt = $pdo->prepare('INSERT INTO ANIMAIS (DATAREGASTE, SEXO, PORTE, USUARIO_IDUSUARIO, ESPECIE_IDESPECIE) VALUES (:a, :b, :c, :d, :e)');
+                $stmt = $pdo->prepare('INSERT INTO ANIMAIS (DATARESGATE, SEXO, PORTE, USUARIO_IDUSUARIO, ESPECIE_IDESPECIE) VALUES (:a, :b, :c, :d, :e)');
                 $stmt->execute(array(
-                    ':a' => utf8_decode($requestData['DATAREGASTE']),
+                    ':a' => utf8_decode($requestData['DATARESGATE']),
                     ':b' => utf8_decode($requestData['SEXO']),
                     ':c' => utf8_decode($requestData['PORTE']),
                     ':d' => utf8_decode($requestData['USUARIO_IDUSUARIO']),
@@ -41,10 +41,10 @@
             }
         } else{
             try{
-                $stmt = $pdo->prepare('UPDATE ANIMAIS SET DATAREGASTE = :a, SEXO = :b, PORTE = :c, USUARIO_IDUSUARIO = :d, ESPECIE_IDESPECIE = :e WHERE IDANIMAIS = :id');
+                $stmt = $pdo->prepare('UPDATE ANIMAIS SET DATARESGATE = :a, SEXO = :b, PORTE = :c, USUARIO_IDUSUARIO = :d, ESPECIE_IDESPECIE = :e WHERE IDANIMAIS = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => utf8_decode($requestData['DATAREGASTE']),
+                    ':a' => utf8_decode($requestData['DATARESGATE']),
                     ':b' => utf8_decode($requestData['SEXO']),
                     ':c' => utf8_decode($requestData['PORTE']),
                     ':d' => $requestData['USUARIO_IDUSUARIO'],
