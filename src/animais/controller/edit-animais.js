@@ -1,12 +1,16 @@
 $(document).ready(function() {
     $('#table-animais').on('click', 'button.btn-edit', function(e) {
         e.preventDefault()
+
         // Limpar os campos da minha janela modal
         $('.modal-title').empty()
         $('.modal-body').empty()
+
         // Criar um novo título para nossa janela modals
         $('.modal-title').append('Edição do animal')
+
         let IDANIMAIS = `IDANIMAIS=${$(this).attr('id')}`
+
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -36,7 +40,7 @@ $(document).ready(function() {
                                 }
                             }
                         })
-                        var curso = dado.dados.ESPECIE_IDESPECIE
+                        var especie = dado.dados.ESPECIE_IDESPECIE
                         $.ajax({
                             type: 'POST',
                             dataType: 'json',

@@ -22,7 +22,6 @@ $(document).ready(function() {
                 })
 
                 $('#modal-animais').modal('hide')
-                    //$('#ANIMAIS').DataTable().ajax.reload()
                 $('#table-animais').DataTable().ajax.reload()
 
             }
