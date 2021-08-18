@@ -4,7 +4,7 @@ $(document).ready(function() {
 
         e.preventDefault()
 
-        let IDANIAMIS = `IDANIMAIS=${$(this).attr('id')}`
+        let IDANIMAIS = `IDANIMAIS=${$(this).attr('id')}`
 
         Swal.fire({
             title: 'Refúgio Pet Lins',
