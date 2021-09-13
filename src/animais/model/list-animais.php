@@ -12,13 +12,14 @@
     $qtdeLinhas = $resultado->rowCount();
     
     $filtro = $requestData['search']['value'];
-    if( !empty( $filtro ) ){
+    if(!empty($filtro) ){
         $sql .= " AND (IDANIMAIS LIKE '$filtro%' ";
         $sql .= " OR PORTE LIKE '$filtro%') ";
     }
     
     $resultado = $pdo->query($sql);
     $totalFiltrados = $resultado->rowCount();
+    
     $colunaOrdem = $requestData['order'][0]['column']; 
     $ordem = $colunas[$colunaOrdem]['data']; 
     $direcao = $requestData['order'][0]['dir']; 
