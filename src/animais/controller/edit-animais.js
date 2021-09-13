@@ -29,7 +29,7 @@ $(document).ready(function() {
                             type: 'POST',
                             dataType: 'json',
                             assync: false,
-                            url: 'src/tipo-animais/model/all-animais.php',
+                            url: 'src/usuario/model/all-usuario.php',
                             success: function(dados) {
                                 for (const dado of dados) {
                                     if (dado.IDTIPO_USUARIO == tipo) {
