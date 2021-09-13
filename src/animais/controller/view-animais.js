@@ -47,7 +47,7 @@ $(document).ready(function() {
                         })
                         $('#USUARIO_IDUSUARIO').attr('readonly', 'true')
 
-                        var curso = dado.dados.ESPECIE_IDESPECIE
+                        var especie = dado.dados.ESPECIE_IDESPECIE
                         $.ajax({
                             type: 'POST',
                             dataType: 'json',
