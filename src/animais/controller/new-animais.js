@@ -13,7 +13,7 @@ $(document).ready(function() {
                     type: 'POST',
                     dataType: 'json',
                     assync: true,
-                    url: 'src/tipo-animais/model/all-animais.php',
+                    url: 'src/usuario/model/all-usuario.php',
                     success: function(dados) {
                         for (const dado of dados) {
                             $('#USUARIO_IDUSUARIO').append(`<option value="${dado.IDUSUARIO}">${dado.LOGINN}</option>`)
