@@ -20,7 +20,7 @@ $(document).ready(function() {
                         }
                     }
                 })
-                // Popular o select dos cursos
+                // Popular o select das espécies
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
