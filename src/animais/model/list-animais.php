@@ -6,7 +6,7 @@
 
     $colunas = $requestData['columns'];
 
-    $sql = "SELECT IDANIMAIS, PORTE FROM ANIMAIS WHERE 1=1 ";
+    $sql = "SELECT IDANIMAIS, PORTE FROM ANIMAIS WHERE 1=1";
 
     $resultado = $pdo->query($sql);
     $qtdeLinhas = $resultado->rowCount();
