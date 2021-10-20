@@ -13,8 +13,8 @@
     
     $filtro = $requestData['search']['value'];
     if(!empty($filtro) ){
-        $sql .= " AND (IDANIMAIS LIKE '$filtro%' ";
-        $sql .= " OR PORTE LIKE '$filtro%') ";
+        $sql .= " AND (IDANIMAIS LIKE '%$filtro%' ";
+        $sql .= " OR PORTE LIKE '%$filtro%') ";
     }
     
     $resultado = $pdo->query($sql);
