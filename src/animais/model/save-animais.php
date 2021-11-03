@@ -22,7 +22,7 @@
             // echo 'USUARIO_IDUSUARIO: '.$requestData['USUARIO_IDUSUARIO'].'<br>';
             // echo 'ESPECIE_IDESPECIE: '.$requestData['ESPECIE_IDESPECIE'].'<br>';
             // echo 'IDANIMAIS: '.$requestData['IDANIMAIS'].'<br>';
-            // oiieiei
+           
             try{
                 $stmt = $pdo->prepare('INSERT INTO ANIMAIS (DATARESGATE, SEXO, PORTE, USUARIO_IDUSUARIO, ESPECIE_IDESPECIE) VALUES (:a, :b, :c, :d, :e)');
                 $stmt->execute(array(
