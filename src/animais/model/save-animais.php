@@ -16,12 +16,6 @@
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
-            // echo 'DATA: '.$requestData['DATARESGATE'].'<br>';
-            // echo 'SEXO: '.$requestData['SEXO'].'<br>';
-            // echo 'PORTE: '.$requestData['PORTE'].'<br>';
-            // echo 'USUARIO_IDUSUARIO: '.$requestData['USUARIO_IDUSUARIO'].'<br>';
-            // echo 'ESPECIE_IDESPECIE: '.$requestData['ESPECIE_IDESPECIE'].'<br>';
-            // echo 'IDANIMAIS: '.$requestData['IDANIMAIS'].'<br>';
            
             try{
                 $stmt = $pdo->prepare('INSERT INTO ANIMAIS (DATARESGATE, SEXO, PORTE, USUARIO_IDUSUARIO, ESPECIE_IDESPECIE) VALUES (:a, :b, :c, :d, :e)');
