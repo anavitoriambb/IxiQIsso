@@ -43,27 +43,27 @@
                 );
             }
         } else{
-            // try{
-            //     $stmt = $pdo->prepare('UPDATE ANIMAIS SET DATARESGATE = :a, SEXO = :b, PORTE = :c, USUARIO_IDUSUARIO = :d, ESPECIE_IDESPECIE = :e WHERE IDANIMAIS = :id');
-            //     $stmt->execute(array(
-            //         ':id' => $ID,
-            //         ':a' => utf8_decode($requestData['DATARESGATE']),
-            //         ':b' => utf8_decode($requestData['SEXO']),
-            //         ':c' => utf8_decode($requestData['PORTE']),
-            //         ':d' => $requestData['USUARIO_IDUSUARIO'],
-            //         ':e' => $requestData['ESPECIE_IDESPECIE']
-            //     ));
-            //     $dados = array(
-            //         "tipo" => "success",
-            //         "mensagem" => "Animal alterado com sucesso."
-            //     );
-            // } catch(PDOException $e){
-            //     $dados = array(
-            //         "tipo" => "error",
-            //         "mensagem" => "Não foi possível efetuar a alteração de animal."
-            //     );
-            // }
-            echo 'Deu ruim....';
+            try{
+                $stmt = $pdo->prepare('UPDATE ANIMAIS SET DATARESGATE = :a, SEXO = :b, PORTE = :c, USUARIO_IDUSUARIO = :d, ESPECIE_IDESPECIE = :e WHERE IDANIMAIS = :id');
+                $stmt->execute(array(
+                    ':id' => $ID,
+                    ':a' => utf8_decode($requestData['DATARESGATE']),
+                    ':b' => utf8_decode($requestData['SEXO']),
+                    ':c' => utf8_decode($requestData['PORTE']),
+                    ':d' => $requestData['USUARIO_IDUSUARIO'],
+                    ':e' => $requestData['ESPECIE_IDESPECIE']
+                ));
+                $dados = array(
+                    "tipo" => "success",
+                    "mensagem" => "Animal alterado com sucesso."
+                );
+            } catch(PDOException $e){
+                $dados = array(
+                    "tipo" => "error",
+                    "mensagem" => "Não foi possível efetuar a alteração de animal."
+                );
+            }
         }
     }
-    // echo json_encode($dados);
+    echo json_encode($dados);
+    
