@@ -21,7 +21,7 @@
     } else {
         $dados = array(
             'tipo' => 'error',
-            'mensagem' => 'Não foi possível obter o registro solicitado.',
+            'mensagem' => 'Não foi possível obter o registro solicitado',
             'dados' => array()
         );
     }
