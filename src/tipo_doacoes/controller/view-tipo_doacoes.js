@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('#table-tipo').on('click', 'button.btn-view', function(e) {
+    $('#table-tipo_doacoes').on('click', 'button.btn-view', function(e) {
 
         e.preventDefault()
 
