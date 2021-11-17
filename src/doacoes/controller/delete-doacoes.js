@@ -1,10 +1,10 @@
 $(document).ready(function() {
 
-    $('#table-animais').on('click', 'button.btn-delete', function(e) {
+    $('#table-doacoes').on('click', 'button.btn-delete', function(e) {
 
         e.preventDefault()
 
-        let IDANIMAIS = `IDANIMAIS=${$(this).attr('id')}`
+        let IDESPECIE = `IDDOACOES=${$(this).attr('id')}`
 
         Swal.fire({
             title: 'Refúgio Pet Lins',
@@ -21,8 +21,8 @@ $(document).ready(function() {
                     type: 'POST',
                     dataType: 'json',
                     assync: true,
-                    data: IDANIMAIS,
-                    url: 'src/animais/model/delete-animais.php',
+                    data: IDESPECIE,
+                    url: 'src/doacoes/model/delete-doacoes.php',
                     success: function(dados) {
                         Swal.fire({
                             title: 'Refúgio Pet Lins',
@@ -31,7 +31,7 @@ $(document).ready(function() {
                             confirmButtonText: 'OK'
                         })
 
-                        $('#table-animais').DataTable().ajax.reload()
+                        $('#table-doacoes').DataTable().ajax.reload()
                     }
                 })
             }

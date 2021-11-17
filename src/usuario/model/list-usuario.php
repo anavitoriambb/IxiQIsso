@@ -13,9 +13,9 @@
     $qtdeLinhas = $resultado->rowCount();
     
     $filtro = $requestData['search']['value'];
-    if( !empty( $filtro ) ){
-        $sql .= " AND (IDUSUARIO LIKE '$filtro%' ";
-        $sql .= " OR LOGINN LIKE '$filtro%') ";
+    if(!empty($filtro) ){
+        $sql .= " AND (IDUSUARIO LIKE '%$filtro%' ";
+        $sql .= " OR LOGINN LIKE '%$filtro%') ";
     }
     
     $resultado = $pdo->query($sql);

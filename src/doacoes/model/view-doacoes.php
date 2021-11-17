@@ -2,9 +2,9 @@
 
     include('../../conexao/conn.php');
 
-    $ID = $_REQUEST['IDANIMAIS'];
+    $IDDOACOES = $_REQUEST['IDDOACOES'];
 
-    $sql = "SELECT * FROM ANIMAIS WHERE IDANIMAIS = $ID";
+    $sql = "SELECT * FROM DOACOES WHERE IDDOACOES = $IDDOACOES";
 
     $resultado = $pdo->query($sql);
 
@@ -21,7 +21,7 @@
     } else {
         $dados = array(
             'tipo' => 'error',
-            'mensagem' => 'Não foi possível obter o registro solicitado',
+            'mensagem' => 'Não foi possível obter o registro solicitado.',
             'dados' => array()
         );
     }

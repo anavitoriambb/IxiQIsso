@@ -1,18 +1,14 @@
 $(document).ready(function() {
-
     $('.btn-save').click(function(e) {
         e.preventDefault()
-
-        let dados = $('#form-animais').serialize()
-
+        let dados = $('#form-tipo_doacoes').serialize()
         dados += `&operacao=${$('.btn-save').attr('data-operation')}`
-
         $.ajax({
             type: 'POST',
             dataType: 'json',
             assync: true,
             data: dados,
-            url: 'src/animais/model/save-animais.php',
+            url: 'src/tipo_doacoes/model/save-tipo_doacoes.php',
             success: function(dados) {
                 Swal.fire({
                     title: 'Refúgio Pet Lins',
@@ -20,10 +16,8 @@ $(document).ready(function() {
                     icon: dados.tipo,
                     confirmButtonText: 'OK'
                 })
-
-                $('#modal-animais').modal('hide')
-                $('#table-animais').DataTable().ajax.reload()
-
+                $('#modal-tipo_doacoes').modal('hide')
+                $('#table-tipo_doacoes').DataTable().ajax.reload()
             }
         })
     })

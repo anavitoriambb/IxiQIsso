@@ -1,37 +1,30 @@
 $(document).ready(function() {
-
-    $('#table-animais').on('click', 'button.btn-delete', function(e) {
-
+    $('#table-tipo_doacoes').on('click', 'button.btn-delete', function(e) {
         e.preventDefault()
-
-        let IDANIMAIS = `IDANIMAIS=${$(this).attr('id')}`
-
+        let IDTIPO_DOACOES = `IDTIPO_DOACOES=${$(this).attr('id')}`
         Swal.fire({
-            title: 'Refúgio Pet Lins',
+            title: 'Library',
             text: 'Deseja realmente excluir o registro?',
             icon: 'question',
             showCancelButton: true,
             confirmButtonText: 'Sim',
-            cancelButtonText: 'Não'
+            cancelButtonText: 'Não',
         }).then((result) => {
-
             if (result.value) {
-
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
                     assync: true,
-                    data: IDANIMAIS,
-                    url: 'src/animais/model/delete-animais.php',
+                    data: IDTIPO_DOACOES,
+                    url: "src/tipo_doacoes/model/delete-tipo_doacoes.php",
                     success: function(dados) {
                         Swal.fire({
-                            title: 'Refúgio Pet Lins',
+                            title: 'Library',
                             text: dados.mensagem,
                             icon: dados.tipo,
                             confirmButtonText: 'OK'
                         })
-
-                        $('#table-animais').DataTable().ajax.reload()
+                        $('#table-tipo_doacoes').DataTable().ajax.reload()
                     }
                 })
             }
