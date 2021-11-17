@@ -1,11 +1,7 @@
 $(document).ready(function() {
-
     $('#table-tipo_doacoes').on('click', 'button.btn-delete', function(e) {
-
         e.preventDefault()
-
         let IDTIPO_DOACOES = `IDTIPO_DOACOES=${$(this).attr('id')}`
-
         Swal.fire({
             title: 'Library',
             text: 'Deseja realmente excluir o registro?',
@@ -14,9 +10,7 @@ $(document).ready(function() {
             confirmButtonText: 'Sim',
             cancelButtonText: 'Não',
         }).then((result) => {
-
             if (result.value) {
-
                 $.ajax({
                     type: 'POST',
                     dataType: 'json',
@@ -30,7 +24,6 @@ $(document).ready(function() {
                             icon: dados.tipo,
                             confirmButtonText: 'OK'
                         })
-
                         $('#table-tipo_doacoes').DataTable().ajax.reload()
                     }
                 })

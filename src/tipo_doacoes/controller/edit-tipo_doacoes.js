@@ -1,18 +1,12 @@
 $(document).ready(function() {
-
     $('#table-tipo_doacoes').on('click', 'button.btn-edit', function(e) {
-
         e.preventDefault()
-
         // Limpar os campos da minha janela modal
         $('.modal-title').empty()
         $('.modal-body').empty()
-
         // Criar um novo título para minha janela modal
         $('.modal-title').append('Edição do tipo de doação')
-
         let IDTIPO_DOACOES = `IDTIPO_DOACOES=${$(this).attr('id')}`
-
         $.ajax({
             type: 'POST',
             dataType: 'json',

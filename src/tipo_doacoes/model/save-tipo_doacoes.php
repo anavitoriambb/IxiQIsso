@@ -20,12 +20,12 @@
                 $stmt = $pdo->prepare('INSERT INTO TIPO_DOACOES (QUANTIDADE, VALOR, DESCRICAO) VALUES (:a, :b, :c)');
                 $stmt->execute(array(
                     ':a' => $requestData['QUANTIDADE'],
-                    ':b' => md5($requestData['VALOR']),
-                    ':c' => md5($requestData['DESCRICAO'])
+                    ':b' => $requestData['VALOR'],
+                    ':c' => $requestData['DESCRICAO']
                 ));
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => "Tipo de doação cadastrado com sucesso."
+                    "mensagem" => "Tipo de doção cadastrado com sucesso."
                 );
             } catch (PDOException $e) {
                 $dados = array(
@@ -38,8 +38,8 @@
                 $stmt = $pdo->prepare('UPDATE TIPO_DOACOES SET QUANTIDADE = :a, VALOR = :b, DESCRICAO = :c WHERE IDTIPO_DOACOES = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => md5($requestData['QUANTIDADE']),
-                    ':b' => md5($requestData['VALOR']),
+                    ':a' => $requestData['QUANTIDADE'],
+                    ':b' => $requestData['VALOR'],
                     ':c' => $requestData['DESCRICAO']
                 ));
                 $dados = array(

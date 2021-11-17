@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     $('#table-tipo_doacoes').DataTable({
         "processing": true,
         "serverSide": true,
@@ -12,22 +11,30 @@ $(document).ready(function() {
         },
         "columns": [{
                 "data": 'IDTIPO_DOACOES',
-                "className": "text-center"
+                "className": 'text-center'
+            },
+            {
+                "data": 'QUANTIDADE',
+                "className": 'text-center'
+            },
+            {
+                "data": 'VALOR',
+                "className": 'text-center'
             },
             {
                 "data": 'DESCRICAO',
-                "className": "text-center"
+                "className": 'text-center'
             },
             {
                 "data": 'IDTIPO_DOACOES',
                 "orderable": false,
                 "searchable": false,
-                "className": "text-center",
+                "className": 'text-center',
                 "render": function(data, type, row, meta) {
                     return `
-                    <button id="${data}" class="btn btn-info btn-sm btn-view"><i class="fas fa-eye"></i></button>
-                    <button id="${data}" class="btn btn-primary btn-sm btn-edit"><i class="fas fa-edit"></i></button>
-                    <button id="${data}" class="btn btn-danger btn-sm btn-delete"><i class="fas fa-trash-alt"></i></button>
+                    <button id="${data}" class="btn btn-info btn-sm btn-view"><i class="mdi mdi-eye"></i></button>
+                    <button id="${data}" class="btn btn-primary btn-sm btn-edit"><i class="mdi mdi-square-edit-outline"></i></button>
+                    <button id="${data}" class="btn btn-danger btn-sm btn-delete"><i class="mdi mdi-trash-can-outline"></i></button>
                     `
                 }
             }
