@@ -20,11 +20,10 @@
             try{
                 $stmt = $pdo->prepare('INSERT INTO DOADORES (NOME, TELEFONE, EMAIL, USUARIO_IDUSUARIO) VALUES (:a, :b, :c, :d)');
                 $stmt->execute(array(
-                    ':a' => $requestData['DATARESGATE'],
-                    ':b' => utf8_decode($requestData['SEXO']),
-                    ':c' => utf8_decode($requestData['PORTE']),
-                    ':d' => $requestData['USUARIO_IDUSUARIO'],
-                    ':e' => $requestData['ESPECIE_IDESPECIE']
+                    ':a' => $requestData['NOME'],
+                    ':b' => $requestData['TELEFONE'],
+                    ':c' => $requestData['EMAIL'],
+                    ':d' => $requestData['USUARIO_IDUSUARIO']
                 ));
                 $dados = array(
                     "tipo" => "success",
@@ -38,14 +37,13 @@
             }
         } else{
             try{
-                $stmt = $pdo->prepare('UPDATE DOADORES SET DATARESGATE = :a, SEXO = :b, PORTE = :c, USUARIO_IDUSUARIO = :d, ESPECIE_IDESPECIE = :e WHERE IDANIMAIS = :id');
+                $stmt = $pdo->prepare('UPDATE DOADORES SET NOME = :a, TELEFONE = :b, EMAIL = :c, USUARIO_IDUSUARIO = :d WHERE IDDOADORES = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => utf8_decode($requestData['DATARESGATE']),
-                    ':b' => utf8_decode($requestData['SEXO']),
-                    ':c' => utf8_decode($requestData['PORTE']),
-                    ':d' => $requestData['USUARIO_IDUSUARIO'],
-                    ':e' => $requestData['ESPECIE_IDESPECIE']
+                    ':a' => $requestData['NOME'],
+                    ':b' => $requestData['TELEFONE'],
+                    ':c' => $requestData['EMAIL'],
+                    ':d' => $requestData['USUARIO_IDUSUARIO']
                 ));
                 $dados = array(
                     "tipo" => "success",
