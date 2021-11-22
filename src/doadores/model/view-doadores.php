@@ -1,8 +1,13 @@
 <?php
+
     include('../../conexao/conn.php');
-    $IDTIPO_DOACOES = $_REQUEST['IDTIPO_DOACOES'];
-    $sql = "SELECT * FROM TIPO_DOACOES WHERE IDTIPO_DOACOES = $IDTIPO_DOACOES";
+
+    $ID = $_REQUEST['IDDOADORES'];
+
+    $sql = "SELECT * FROM DOADORES WHERE IDDOADORES = $ID";
+
     $resultado = $pdo->query($sql);
+
     if($resultado){
         $reusltQuery = array();
         while($row = $resultado->fetch(PDO::FETCH_ASSOC)){
@@ -16,8 +21,9 @@
     } else {
         $dados = array(
             'tipo' => 'error',
-            'mensagem' => 'Não foi possível obter o registro solicitado.',
+            'mensagem' => 'Não foi possível obter o registro solicitado',
             'dados' => array()
         );
     }
+
     echo json_encode($dados);

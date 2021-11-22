@@ -4,7 +4,7 @@
     // Obter os dados enviados do formulário via REQUEST
     $requestData = $_REQUEST;
     // Verificação dos campos obrigatórios do formulário
-    if(empty($requestData['PORTE'])){
+    if(empty($requestData['NOME'])){
         // Caso a variável venha gerar um retorno com erro
         $dados = array(
             "tipo" => "error",
@@ -12,13 +12,13 @@
         );
     } else{
         // Caso a variável exista e tenha conteúdo, vamos gerar uma requisição
-        $ID = isset($requestData['IDANIMAIS']) ? $requestData['IDANIMAIS'] : '';
+        $ID = isset($requestData['IDDOADORES']) ? $requestData['IDDOADORES'] : '';
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
            
             try{
-                $stmt = $pdo->prepare('INSERT INTO ANIMAIS (DATARESGATE, SEXO, PORTE, USUARIO_IDUSUARIO, ESPECIE_IDESPECIE) VALUES (:a, :b, :c, :d, :e)');
+                $stmt = $pdo->prepare('INSERT INTO DOADORES (NOME, TELEFONE, EMAIL, USUARIO_IDUSUARIO) VALUES (:a, :b, :c, :d)');
                 $stmt->execute(array(
                     ':a' => $requestData['DATARESGATE'],
                     ':b' => utf8_decode($requestData['SEXO']),
@@ -28,17 +28,17 @@
                 ));
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => "Animal cadastrado com sucesso."
+                    "mensagem" => "Doador cadastrado com sucesso."
                 );
             } catch (PDOException $e) {
                 $dados = array(
                 "tipo" => "error",
-                "mensagem" => "Não foi possível efetuar o cadastro do animal."
+                "mensagem" => "Não foi possível efetuar o cadastro do doador."
                 );
             }
         } else{
             try{
-                $stmt = $pdo->prepare('UPDATE ANIMAIS SET DATARESGATE = :a, SEXO = :b, PORTE = :c, USUARIO_IDUSUARIO = :d, ESPECIE_IDESPECIE = :e WHERE IDANIMAIS = :id');
+                $stmt = $pdo->prepare('UPDATE DOADORES SET DATARESGATE = :a, SEXO = :b, PORTE = :c, USUARIO_IDUSUARIO = :d, ESPECIE_IDESPECIE = :e WHERE IDANIMAIS = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
                     ':a' => utf8_decode($requestData['DATARESGATE']),
@@ -49,12 +49,12 @@
                 ));
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => "Animal alterado com sucesso."
+                    "mensagem" => "Doador alterado com sucesso."
                 );
             } catch(PDOException $e){
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => "Não foi possível efetuar a alteração de animal."
+                    "mensagem" => "Não foi possível efetuar a alteração de doador."
                 );
             }
         }
