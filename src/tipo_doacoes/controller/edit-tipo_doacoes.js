@@ -1,10 +1,10 @@
 $(document).ready(function() {
     $('#table-tipo_doacoes').on('click', 'button.btn-edit', function(e) {
         e.preventDefault()
-        // Limpar os campos da minha janela modal
+            // Limpar os campos da minha janela modal
         $('.modal-title').empty()
         $('.modal-body').empty()
-        // Criar um novo título para minha janela modal
+            // Criar um novo título para minha janela modal
         $('.modal-title').append('Edição do tipo de doação')
         let IDTIPO_DOACOES = `IDTIPO_DOACOES=${$(this).attr('id')}`
         $.ajax({
@@ -17,6 +17,8 @@ $(document).ready(function() {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/tipo_doacoes/view/form-tipo_doacoes.html', function() {
                         $('#DESCRICAO').val(dado.dados.DESCRICAO)
+                        $('#VALOR').val(dado.dados.VALOR)
+                        $('#QUANTIDADE').val(dado.dados.QUANTIDADE)
                         $('#IDTIPO_DOACOES').val(dado.dados.IDTIPO_DOACOES)
                     })
                     $('.btn-save').show()
