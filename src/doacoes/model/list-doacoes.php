@@ -6,7 +6,7 @@
 
     $colunas = $requestData['columns'];
 
-    $sql = "SELECT IDDOACOES, DESCRICAO FROM DOACOES WHERE 1=1 ";
+    $sql = "SELECT IDDOACOES, DATAENTRADA FROM DOACOES WHERE 1=1 ";
 
     $resultado = $pdo->query($sql);
     $qtdeLinhas = $resultado->rowCount();
@@ -14,7 +14,7 @@
     $filtro = $requestData['search']['value'];
     if( !empty( $filtro ) ){
         $sql .= " AND (IDDOACOES LIKE '$filtro%' ";
-        $sql .= " OR DESCRICAO LIKE '$filtro%') ";
+        $sql .= " OR DATAENTRADA LIKE '$filtro%') ";
     }
     
     $resultado = $pdo->query($sql);

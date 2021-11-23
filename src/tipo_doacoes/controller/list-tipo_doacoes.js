@@ -13,14 +13,15 @@ $(document).ready(function() {
                 "data": 'IDTIPO_DOACOES',
                 "className": 'text-center'
             },
-            {
-                "data": 'QUANTIDADE',
-                "className": 'text-center'
-            },
-            {
-                "data": 'VALOR',
-                "className": 'text-center'
-            },
+            //Tem q tirar a qtd e valor pq ñ aparecem na tela (mas caso precise já está aqui o codigo)
+            /* {
+                 "data": 'QUANTIDADE',
+                 "className": 'text-center'
+             },
+             {
+                 "data": 'VALOR',
+                 "className": 'text-center'
+             },*/
             {
                 "data": 'DESCRICAO',
                 "className": 'text-center'

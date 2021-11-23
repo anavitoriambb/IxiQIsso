@@ -4,7 +4,7 @@
 
     $IDDOACOES = $_REQUEST['IDDOACOES'];
 
-    $sql = "SELECT * FROM DOACOES WHERE IDDOACOES = $IDDOACOES";
+    $sql = "SELECT * FROM DOACOES WHERE IDDOACOES = $ID";
 
     $resultado = $pdo->query($sql);
 

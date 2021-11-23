@@ -15,10 +15,14 @@ $(document).ready(function() {
             },
             {
                 "data": 'DATAENTRADA',
-                "className": 'text-center'
+                "className": 'date'
             },
             {
-                "data": 'IDESPECIE',
+                "data": 'DATASAIDA',
+                "className": 'date'
+            },
+            {
+                "data": 'IDDOACOES',
                 "orderable": false,
                 "searchable": false,
                 "className": 'text-center',

@@ -18,14 +18,6 @@ $(document).ready(function() {
                 "className": 'text-center'
             },
             {
-                "data": 'TELEFONE',
-                "className": 'text-center'
-            },
-            {
-                "data": 'EMAIL',
-                "className": 'text-center'
-            },
-            {
                 "data": 'IDDOADORES',
                 "orderable": false,
                 "searchable": false,

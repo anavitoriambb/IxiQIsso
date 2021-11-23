@@ -7,7 +7,7 @@
     $IDDOACOES = $_REQUEST['IDDOACOES'];
 
     // Gerar uma querie de exclusão no banco de dados
-    $sql = "DELETE FROM DOACOES WHERE IDDOACOES = $IDDOACOES";
+    $sql = "DELETE FROM DOACOES WHERE IDDOACOES = $ID";
 
     // Executar a querie 
     $resultado = $pdo->query($sql);

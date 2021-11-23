@@ -21,9 +21,12 @@
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
             try{
-                $stmt = $pdo->prepare('INSERT INTO DOACOES (DATAENTRADA) VALUES (:a)');
+                $stmt = $pdo->prepare('INSERT INTO DOACOES (DATAENTRADA, DATASAIDA, DOADORES_IDDOADORES, TIPO_DOACOES_IDTIPO_DOACOES) VALUES (:a, :b, :c, :d)');
                 $stmt->execute(array(
-                    ':a' => utf8_decode($requestData['DATAENTRADA'])
+                    ':a' => utf8_decode($requestData['DATAENTRADA']),
+                    ':b' => utf8_decode($requestData['DATASAIDA']),
+                    ':c' => $requestData['DOADORES_IDDOADORES'],
+                    ':d' => $requestData['TIPO_DOACOES_IDTIPO_DOACOES']
                 ));
                 $dados = array(
                     "tipo" => "success",
@@ -37,10 +40,13 @@
             }
         } else{
             try{
-                $stmt = $pdo->prepare('UPDATE DOACOES SET DATAENTRADA = :a WHERE IDDOACOES = :id');
+                $stmt = $pdo->prepare('UPDATE DOACOES SET DATAENTRADA = :a, DATASAIDA = :b, DOADORES_IDDOADORES = :c, TIPO_DOACOES_IDTIPO_DOACOES = :d WHERE IDDOACOES = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => utf8_decode($requestData['DATAENTRADA'])
+                    ':a' => utf8_decode($requestData['DATAENTRADA']),
+                    ':b' => utf8_decode($requestData['DATASAIDA']),
+                    ':c' => $requestData['DOADORES_IDDOADORES'],
+                    ':d' => $requestData['TIPO_DOACOES_IDTIPO_DOACOES']
                 ));
                 $dados = array(
                     "tipo" => "success",

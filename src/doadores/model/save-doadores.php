@@ -20,8 +20,8 @@
             try{
                 $stmt = $pdo->prepare('INSERT INTO DOADORES (NOME, TELEFONE, EMAIL, USUARIO_IDUSUARIO) VALUES (:a, :b, :c, :d)');
                 $stmt->execute(array(
-                    ':a' => $requestData['NOME'],
-                    ':b' => $requestData['TELEFONE'],
+                    ':a' => utf8_decode($requestData['NOME']),
+                    ':b' => utf8_decode($requestData['TELEFONE']),
                     ':c' => $requestData['EMAIL'],
                     ':d' => $requestData['USUARIO_IDUSUARIO']
                 ));
@@ -40,8 +40,8 @@
                 $stmt = $pdo->prepare('UPDATE DOADORES SET NOME = :a, TELEFONE = :b, EMAIL = :c, USUARIO_IDUSUARIO = :d WHERE IDDOADORES = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => $requestData['NOME'],
-                    ':b' => $requestData['TELEFONE'],
+                    ':a' => utf8_decode($requestData['NOME']),
+                    ':b' => utf8_decode($requestData['TELEFONE']),
                     ':c' => $requestData['EMAIL'],
                     ':d' => $requestData['USUARIO_IDUSUARIO']
                 ));
