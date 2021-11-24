@@ -17,10 +17,7 @@ $(document).ready(function() {
                 "data": 'DATAENTRADA',
                 "className": 'date'
             },
-            {
-                "data": 'DATASAIDA',
-                "className": 'date'
-            },
+          
             {
                 "data": 'IDDOACOES',
                 "orderable": false,

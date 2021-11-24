@@ -23,7 +23,7 @@ $(document).ready(function() {
                     $('.modal-body').load('src/doacoes/view/form-doacoes.html', function() {
                         $('#DATAENTRADA').val(dado.dados.DATAENTRADA)
                         $('#DATAENTRADA').attr('readonly', 'true')
-                        $('#DATASAIDA').val(dado.dados.DATASAISA)
+                        $('#DATASAIDA').val(dado.dados.DATASAIDA)
                         $('#DATASAIDA').attr('readonly', 'true')
 
                         var tipo = dado.dados.DOADORES_IDDOADORES
@@ -50,7 +50,7 @@ $(document).ready(function() {
                             url: 'src/tipo_doacoes/model/all-tipo_doacoes.php',
                             success: function(dados) {
                                 for (const dado of dados) {
-                                    if (dado.IDTIPO_DOACOES == TIPO_DOACOES) {
+                                    if (dado.IDTIPO_DOACOES == tipo_doacoes) {
                                         $('#TIPO_DOACOES_IDTIPO_DOACOES').append(`<option value="${dado.IDTIPO_DOACOES}">${dado.DESCRICAO}</option>`)
                                     }
                                 }

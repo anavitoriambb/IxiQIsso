@@ -2,7 +2,7 @@
 
     include('../../conexao/conn.php');
 
-    $IDDOACOES = $_REQUEST['IDDOACOES'];
+    $ID = $_REQUEST['IDDOACOES'];
 
     $sql = "SELECT * FROM DOACOES WHERE IDDOACOES = $ID";
 

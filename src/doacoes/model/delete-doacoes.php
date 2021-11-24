@@ -4,7 +4,7 @@
     include('../../conexao/conn.php');
 
     // Coleta do ID que será excluído em nosso banco de dados
-    $IDDOACOES = $_REQUEST['IDDOACOES'];
+    $ID = $_REQUEST['IDDOACOES'];
 
     // Gerar uma querie de exclusão no banco de dados
     $sql = "DELETE FROM DOACOES WHERE IDDOACOES = $ID";
