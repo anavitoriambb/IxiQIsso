@@ -9,7 +9,7 @@ $(document).ready(function() {
 
         $('.modal-title').append('Edição das doações')
 
-        let IDTIPO_DOACOES = `IDDOACOES=${$(this).attr('id')}`
+        let IDDOACOES = `IDDOACOES=${$(this).attr('id')}`
 
         $.ajax({
             type: 'POST',
