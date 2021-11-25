@@ -1,14 +1,15 @@
 $(document).ready(function() {
 
-    //$('#ESPECIE').on('click', 'button.btn-view', function(e) {
     $('#table-voluntarios').on('click', 'button.btn-view', function(e) {
 
         e.preventDefault()
 
+        // Limpar os campos da minha janela modal
         $('.modal-title').empty()
         $('.modal-body').empty()
 
-        $('.modal-title').append('Visualização dos voluntários')
+        // Criar um novo título para nossa janela modals
+        $('.modal-title').append('Visualização do voluntário')
 
         let IDVOLUNTARIOS = `IDVOLUNTARIOS=${$(this).attr('id')}`
 
@@ -17,7 +18,7 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: IDVOLUNTARIOS,
-            url: 'src/voluntarios/model/view-voluntarios.php',
+            url: "src/voluntarios/model/view-voluntarios.php",
             success: function(dado) {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/voluntarios/view/form-voluntarios.html', function() {
@@ -39,15 +40,27 @@ $(document).ready(function() {
                         $('#ATUACAO').val(dado.dados.ATUACAO)
                         $('#ATUACAO').attr('readonly', 'true')
 
-                        $('#USUARIO_IDUSUARIO').val(dado.dados.USUARIO_IDUSUARIO)
+                        var tipo = dado.dados.USUARIO_IDUSUARIO
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            assync: false,
+                            url: 'src/usuario/model/all-usuario.php',
+                            success: function(dados) {
+                                for (const dado of dados) {
+                                    if (dado.IDUSUARIO == tipo) {
+                                        $('#USUARIO_IDUSUARIO').append(`<option value="${dado.IDUSUARIO}">${dado.LOGINN}</option>`)
+                                    }
+                                }
+                            }
+                        })
                         $('#USUARIO_IDUSUARIO').attr('readonly', 'true')
-
                     })
                     $('.btn-save').hide()
-                    $('#modal-voluntarios').modal('show')
-                } 
+                    $('#modal-animais').modal('show')
+                }
             }
         })
-
     })
+
 })

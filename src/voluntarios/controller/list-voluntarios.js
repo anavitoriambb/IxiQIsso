@@ -22,14 +22,6 @@ $(document).ready(function() {
                 "className": 'text-center'
             },
             {
-                "data": 'ENDERECO',
-                "className": 'text-center'
-            },
-            {
-                "data": 'RG',
-                "className": 'text-center'
-            },
-            {
                 "data": 'EMAIL',
                 "className": 'text-center'
             },

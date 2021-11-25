@@ -6,8 +6,7 @@
 
     $colunas = $requestData['columns'];
 
-    $sql = "SELECT IDVOLUNTARIOS, NOME FROM VOLUNTARIOS WHERE 1=1 ";
-    
+    $sql = "SELECT IDVOLUNTARIOS, NOME, TELEFONE, EMAIL, ATUACAO FROM VOLUNTARIOS WHERE 1=1";
 
     $resultado = $pdo->query($sql);
     $qtdeLinhas = $resultado->rowCount();
@@ -20,6 +19,7 @@
     
     $resultado = $pdo->query($sql);
     $totalFiltrados = $resultado->rowCount();
+    
     $colunaOrdem = $requestData['order'][0]['column']; 
     $ordem = $colunas[$colunaOrdem]['data']; 
     $direcao = $requestData['order'][0]['dir']; 
@@ -34,7 +34,7 @@
         $dados[] = array_map('utf8_encode', $row);
     }
 
-    $json_data = Array(
+    $json_data = array(
         "draw" => intval($requestData['draw']),
         "recordsTotal" => intval($qtdeLinhas),
         "recordsFiltered" => intval($totalFiltrados),
