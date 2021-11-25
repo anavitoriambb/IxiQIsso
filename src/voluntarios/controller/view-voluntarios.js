@@ -57,7 +57,7 @@ $(document).ready(function() {
                         $('#USUARIO_IDUSUARIO').attr('readonly', 'true')
                     })
                     $('.btn-save').hide()
-                    $('#modal-animais').modal('show')
+                    $('#modal-voluntarios').modal('show')
                 }
             }
         })
