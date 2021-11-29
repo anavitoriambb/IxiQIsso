@@ -25,8 +25,23 @@ $(document).ready(function() {
                         $('#ENDERECO').val(dado.dados.ENDERECO)
                         $('#RG').val(dado.dados.RG)
                         $('#EMAIL').val(dado.dados.EMAIL)
-                        $('#ATUACAO').val(dado.dados.ATUACAO)
                         $('#IDVOLUNTARIOS').val(dado.dados.IDVOLUNTARIOS)
+                        var tipo_voluntario = dado.dados.TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            assync: false,
+                            url: 'src/tipo_voluntarios/model/all-tipo_voluntarios.php',
+                            success: function(dados) {
+                                for (const dado of dados) {
+                                    if (dado.IDTIPO_VOLUNTARIOS == tipo_voluntario) {
+                                        $('#TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS').append(`<option selected value="${dado.IDTIPO_VOLUNTARIOS}">${dado.DESCRICAO}</option>`)
+                                    } else {
+                                        $('#TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS').append(`<option value="${dado.IDTIPO_VOLUNTARIOS}">${dado.DESCRICAO}</option>`)
+                                    }
+                                }
+                            }
+                        })
                         var tipo = dado.dados.USUARIO_IDUSUARIO
                         $.ajax({
                             type: 'POST',

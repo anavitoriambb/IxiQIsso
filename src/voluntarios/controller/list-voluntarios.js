@@ -19,11 +19,6 @@ $(document).ready(function() {
             },
 
             {
-                "data": 'ATUACAO',
-                "className": 'text-center'
-            },
-
-            {
                 "data": 'IDVOLUNTARIOS',
                 "orderable": false,
                 "searchable": false,

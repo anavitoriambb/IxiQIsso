@@ -30,15 +30,28 @@ $(document).ready(function() {
 
                         $('#ENDERECO').val(dado.dados.ENDERECO)
                         $('#ENDERECO').attr('readonly', 'true')
-                        
+
                         $('#RG').val(dado.dados.RG)
                         $('#RG').attr('readonly', 'true')
 
                         $('#EMAIL').val(dado.dados.EMAIL)
                         $('#EMAIL').attr('readonly', 'true')
-                        
-                        $('#ATUACAO').val(dado.dados.ATUACAO)
-                        $('#ATUACAO').attr('readonly', 'true')
+
+                        var tipo_voluntario = dado.dados.TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS
+                        $.ajax({
+                            type: 'POST',
+                            dataType: 'json',
+                            assync: false,
+                            url: 'src/tipo_voluntarios/model/all-tipo_voluntarios.php',
+                            success: function(dados) {
+                                for (const dado of dados) {
+                                    if (dado.IDTIPO_VOLUNTARIOS == tipo_voluntario) {
+                                        $('#TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS').append(`<option value="${dado.IDTIPO_VOLUNTARIOS}">${dado.DESCRICAO}</option>`)
+                                    }
+                                }
+                            }
+                        })
+                        $('#TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS').attr('readonly', 'true')
 
                         var tipo = dado.dados.USUARIO_IDUSUARIO
                         $.ajax({

@@ -21,14 +21,14 @@
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
             try{
-                $stmt = $pdo->prepare('INSERT INTO VOLUNTARIOS (NOME, TELEFONE, ENDERECO, RG, EMAIL, ATUACAO, USUARIO_IDUSUARIO) VALUES (:a, :b, :c, :d, :e, :f, :g)');
+                $stmt = $pdo->prepare('INSERT INTO VOLUNTARIOS (NOME, TELEFONE, ENDERECO, RG, EMAIL, TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS, USUARIO_IDUSUARIO) VALUES (:a, :b, :c, :d, :e, :f, :g)');
                 $stmt->execute(array(
                     ':a' => $requestData['NOME'],
                     ':b' => $requestData['TELEFONE'],
                     ':c' => $requestData['ENDERECO'],
                     ':d' => $requestData['RG'],
                     ':e' => $requestData['EMAIL'],
-                    ':f' => $requestData['ATUACAO'],
+                    ':f' => $requestData['TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS'],
                     ':g' => $requestData['USUARIO_IDUSUARIO']
                 ));
                 $dados = array(
@@ -43,7 +43,7 @@
             }
         } else{
             try{
-                $stmt = $pdo->prepare('UPDATE VOLUNTARIOS SET NOME = :a, TELEFONE = :b, ENDERECO = :c, RG = :d, EMAIL = :e, ATUACAO = :f, USUARIO_IDUSUARIO = :g WHERE IDVOLUNTARIOS = :id');
+                $stmt = $pdo->prepare('UPDATE VOLUNTARIOS SET NOME = :a, TELEFONE = :b, ENDERECO = :c, RG = :d, EMAIL = :e, TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS = :f, USUARIO_IDUSUARIO = :g WHERE IDVOLUNTARIOS = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
                     ':a' => $requestData['NOME'],
@@ -51,7 +51,7 @@
                     ':c' => $requestData['ENDERECO'],
                     ':d' => $requestData['RG'],
                     ':e' => $requestData['EMAIL'],
-                    ':f' => $requestData['ATUACAO'],
+                    ':f' => $requestData['TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS'],
                     ':g' => $requestData['USUARIO_IDUSUARIO']
                 ));
                 $dados = array(

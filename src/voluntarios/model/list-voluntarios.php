@@ -6,7 +6,7 @@
 
     $colunas = $requestData['columns'];
 
-    $sql = "SELECT IDVOLUNTARIOS, NOME, ATUACAO FROM VOLUNTARIOS WHERE 1=1";
+    $sql = "SELECT IDVOLUNTARIOS, NOME FROM VOLUNTARIOS WHERE 1=1";
 
     $resultado = $pdo->query($sql);
     $qtdeLinhas = $resultado->rowCount();
