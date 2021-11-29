@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('.modal-body').empty()
 
         // Criar um novo título para nossa janela modals
-        $('.modal-title').append('Edição do animal')
+        $('.modal-title').append('Edição do voluntário')
 
         let IDVOLUNTARIOS = `IDVOLUNTARIOS=${$(this).attr('id')}`
 
@@ -26,6 +26,7 @@ $(document).ready(function() {
                         $('#RG').val(dado.dados.RG)
                         $('#EMAIL').val(dado.dados.EMAIL)
                         $('#ATUACAO').val(dado.dados.ATUACAO)
+                        $('#IDVOLUNTARIOS').val(dado.dados.IDVOLUNTARIOS)
                         var tipo = dado.dados.USUARIO_IDUSUARIO
                         $.ajax({
                             type: 'POST',
