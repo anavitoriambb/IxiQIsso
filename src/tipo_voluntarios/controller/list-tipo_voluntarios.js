@@ -14,7 +14,7 @@ $(document).ready(function() {
                 "className": 'text-center'
             },
             {
-                "data": 'PORTE',
+                "data": 'DESCRICAO',
                 "className": 'text-center'
             },
             {

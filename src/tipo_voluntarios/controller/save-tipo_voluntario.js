@@ -1,12 +1,8 @@
 $(document).ready(function() {
-
     $('.btn-save').click(function(e) {
         e.preventDefault()
-
         let dados = $('#form-tipo_voluntarios').serialize()
-
         dados += `&operacao=${$('.btn-save').attr('data-operation')}`
-
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -20,10 +16,8 @@ $(document).ready(function() {
                     icon: dados.tipo,
                     confirmButtonText: 'OK'
                 })
-
                 $('#modal-tipo_voluntarios').modal('hide')
                 $('#table-tipo_voluntarios').DataTable().ajax.reload()
-
             }
         })
     })
