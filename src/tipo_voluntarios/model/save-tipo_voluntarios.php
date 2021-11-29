@@ -4,7 +4,7 @@
     // Obter os dados enviados do formulário via REQUEST
     $requestData = $_REQUEST;
     // Verificação dos campos obrigatórios do formulário
-    if(empty($requestData['VOLUNTARIOS_IDVOLUNTARIOS'])){
+    if(empty($requestData['DESCRICAO'])){
         // Caso a variável venha gerar um retorno com erro
         $dados = array(
             "tipo" => "error",
@@ -16,40 +16,38 @@
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
         // verificação se é para cadastrar um novo registro
         if($operacao == 'insert'){
-           
             try{
-                $stmt = $pdo->prepare('INSERT INTO TIPO_VOLUNTARIOS ( VOLUNTARIOS_IDVOLUNTARIOS) VALUES (:a)');
+                $stmt = $pdo->prepare('INSERT INTO TIPO_VOLUNTARIOS (DESCRICAO) VALUES (:a)');
                 $stmt->execute(array(
-                    ':a' => $requestData['VOLUNTARIOS_IDVOLUNTARIOS']
+                    ':a' => $requestData['DESCRICAO']
                 ));
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => "Animal cadastrado com sucesso."
+                    "mensagem" => "Tipo de voluntário cadastrado com sucesso."
                 );
             } catch (PDOException $e) {
                 $dados = array(
                 "tipo" => "error",
-                "mensagem" => "Não foi possível efetuar o cadastro do animal."
+                "mensagem" => "Não foi possível efetuar o cadastro do tipo de voluntário."
                 );
             }
         } else{
             try{
-                $stmt = $pdo->prepare('UPDATE TIPO_VOLUNTARIOS SET VOLUNTARIOS_IDVOLUNTARIOS = :a WHERE IDTIPO_VOLUNTARIOS = :id');
+                $stmt = $pdo->prepare('UPDATE TIPO_VOLUNTARIOS SET DESCRICAO = :a WHERE IDTIPO_VOLUNTARIOS = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => $requestData['VOLUNTARIOS_IDVOLUNTARIOS']
+                    ':a' => $requestData['DESCRICAO']
                 ));
                 $dados = array(
                     "tipo" => "success",
-                    "mensagem" => "Animal alterado com sucesso."
+                    "mensagem" => "Tipo de voluntário alterado com sucesso."
                 );
             } catch(PDOException $e){
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => "Não foi possível efetuar a alteração de animal."
+                    "mensagem" => "Não foi possível efetuar a alteração de tipo de voluntário."
                 );
             }
         }
     }
     echo json_encode($dados);
-    
