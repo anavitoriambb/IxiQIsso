@@ -17,14 +17,7 @@ $(document).ready(function() {
                 "data": 'NOME',
                 "className": 'text-center'
             },
-            {
-                "data": 'TELEFONE',
-                "className": 'text-center'
-            },
-            {
-                "data": 'EMAIL',
-                "className": 'text-center'
-            },
+
             {
                 "data": 'ATUACAO',
                 "className": 'text-center'

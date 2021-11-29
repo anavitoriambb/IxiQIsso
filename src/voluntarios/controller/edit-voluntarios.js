@@ -26,6 +26,7 @@ $(document).ready(function() {
                         $('#RG').val(dado.dados.RG)
                         $('#EMAIL').val(dado.dados.EMAIL)
                         $('#ATUACAO').val(dado.dados.ATUACAO)
+                        $('#IDVOLUNTARIOS').val(dado.dados.IDVOLUNTARIOS)
                         var tipo = dado.dados.USUARIO_IDUSUARIO
                         $.ajax({
                             type: 'POST',
