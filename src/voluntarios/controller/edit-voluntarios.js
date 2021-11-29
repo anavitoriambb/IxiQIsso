@@ -7,7 +7,7 @@ $(document).ready(function() {
         $('.modal-body').empty()
 
         // Criar um novo título para nossa janela modals
-        $('.modal-title').append('Edição do animal')
+        $('.modal-title').append('Edição do voluntário')
 
         let IDVOLUNTARIOS = `IDVOLUNTARIOS=${$(this).attr('id')}`
 
