@@ -22,6 +22,13 @@ $(document).ready(function() {
                     $('.btn-save').show()
                     $('.btn-save').removeAttr('data-operation')
                     $('#modal-tipo_voluntarios').modal('show')
+                } else {
+                    Swal.fire({
+                        title: 'TCC',
+                        text: dado.mensagem,
+                        type: dado.tipo,
+                        confirmButtonText: 'OK'
+                    })
                 }
             }
         })

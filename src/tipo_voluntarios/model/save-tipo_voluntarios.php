@@ -19,7 +19,7 @@
             try{
                 $stmt = $pdo->prepare('INSERT INTO TIPO_VOLUNTARIOS (DESCRICAO) VALUES (:a)');
                 $stmt->execute(array(
-                    ':a' => $requestData['DESCRICAO']
+                    ':a' => utf8_decode($requestData['DESCRICAO'])
                 ));
                 $dados = array(
                     "tipo" => "success",
@@ -36,7 +36,7 @@
                 $stmt = $pdo->prepare('UPDATE TIPO_VOLUNTARIOS SET DESCRICAO = :a WHERE IDTIPO_VOLUNTARIOS = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => $requestData['DESCRICAO']
+                    ':a' => utf8_decode($requestData['DESCRICAO'])
                 ));
                 $dados = array(
                     "tipo" => "success",

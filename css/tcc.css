@@ -5,7 +5,7 @@
 
 /* .bg-jumbo {
     background: linear-gradient(to bottom, #e67817 13%, #cf8b4f 100%);
-}*/
+}
 
 body {
     --space-xs: 0.5rem;
@@ -19,7 +19,7 @@ body {
 }
 
 
-/* Serviços section */
+/* Serviços section 
 
 section {
     padding: 100px 0;
@@ -52,7 +52,7 @@ section h3.section-subheading {
 }
 
 
-/* End Serviços section */
+/* End Serviços section 
 
 :root {
     --direction: ltr;
@@ -72,21 +72,21 @@ section h3.section-subheading {
 }
 
 
-/* Alternate direction */
+/* Alternate direction 
 
 .article:nth-child(even) {
     direction: var(--direction-alt);
 }
 
 
-/* Revert direction on child elements */
+/* Revert direction on child elements 
 
 .article>* {
     direction: var(--direction);
 }
 
 
-/* Other page styling */
+/* Other page styling
 
 .section-wrap {
     margin-inline-start: auto;
@@ -200,7 +200,7 @@ img {
     clip: rect(1px, 1px, 1px, 1px);
 }
 
-/* Profile Section */
+/* Profile Section 
 
 .profile {
     padding: 5rem 0;
@@ -285,7 +285,7 @@ img {
     font-weight: 600;
 }
 
-/* Gallery Section */
+/* Gallery Section 
 
 .gallery {
     display: flex;
@@ -347,7 +347,7 @@ img {
     object-fit: cover;
 }
 
-/* Loader */
+/* Loader 
 
 .loader {
     width: 5rem;
@@ -359,7 +359,7 @@ img {
     animation: loader 500ms linear infinite;
 }
 
-/* Media Query */
+/* Media Query 
 
 @media screen and (max-width: 40rem) {
     .profile {
@@ -439,9 +439,10 @@ img {
     .profile-stat-count {
         display: block;
     }
-}
+}*/
 
-/* Spinner Animation */
+
+/* Spinner Animation 
 
 @keyframes loader {
     to {
@@ -455,7 +456,7 @@ The following code will only run if your browser supports CSS grid.
 
 Remove or comment-out the code block below to see how the browser will fall-back to flexbox & floated styling. 
 
-*/
+
 
 @supports (display: grid) {
     .profile {
@@ -517,3 +518,4 @@ Remove or comment-out the code block below to see how the browser will fall-back
         }
     }
 }
+*/
