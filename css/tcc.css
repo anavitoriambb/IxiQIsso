@@ -519,3 +519,14 @@ Remove or comment-out the code block below to see how the browser will fall-back
     }
 }
 */
+
+.link{
+    text-decoration: none;
+    color: #fff;
+
+}
+
+.link:hover{
+    color:#fff;
+
+}
