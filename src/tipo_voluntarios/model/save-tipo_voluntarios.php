@@ -19,7 +19,7 @@
             try{
                 $stmt = $pdo->prepare('INSERT INTO TIPO_VOLUNTARIOS (DESCRICAO) VALUES (:a)');
                 $stmt->execute(array(
-                    ':a' => utf8_decode($requestData['DESCRICAO'])
+                    ':a' => $requestData['DESCRICAO']
                 ));
                 $dados = array(
                     "tipo" => "success",
@@ -36,7 +36,7 @@
                 $stmt = $pdo->prepare('UPDATE TIPO_VOLUNTARIOS SET DESCRICAO = :a WHERE IDTIPO_VOLUNTARIOS = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => utf8_decode($requestData['DESCRICAO'])
+                    ':a' => $requestData['DESCRICAO']
                 ));
                 $dados = array(
                     "tipo" => "success",
@@ -45,7 +45,7 @@
             } catch(PDOException $e){
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => "Não foi possível efetuar a alteração de tipo de voluntário."
+                    "mensagem" => "Não foi possível efetuar a alteração do tipo de voluntário."
                 );
             }
         }
