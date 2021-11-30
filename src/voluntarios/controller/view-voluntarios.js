@@ -37,6 +37,9 @@ $(document).ready(function() {
                         $('#EMAIL').val(dado.dados.EMAIL)
                         $('#EMAIL').attr('readonly', 'true')
 
+                        $('#ATUACAO').val(dado.dados.ATUACAO)
+                        $('#ATUACAO').attr('readonly', 'true')
+
                         var tipo_voluntario = dado.dados.TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS
                         $.ajax({
                             type: 'POST',
