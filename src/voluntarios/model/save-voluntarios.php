@@ -23,7 +23,7 @@
             try{
                 $stmt = $pdo->prepare('INSERT INTO VOLUNTARIOS (NOME, TELEFONE, ENDERECO, RG, EMAIL, TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS, USUARIO_IDUSUARIO) VALUES (:a, :b, :c, :d, :e, :f, :g)');
                 $stmt->execute(array(
-                    ':a' => $requestData['NOME'],
+                    ':a' => utf8_decode($requestData['NOME']),
                     ':b' => $requestData['TELEFONE'],
                     ':c' => $requestData['ENDERECO'],
                     ':d' => $requestData['RG'],
@@ -46,7 +46,7 @@
                 $stmt = $pdo->prepare('UPDATE VOLUNTARIOS SET NOME = :a, TELEFONE = :b, ENDERECO = :c, RG = :d, EMAIL = :e, TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS = :f, USUARIO_IDUSUARIO = :g WHERE IDVOLUNTARIOS = :id');
                 $stmt->execute(array(
                     ':id' => $ID,
-                    ':a' => $requestData['NOME'],
+                    ':a' => utf8_decode($requestData['NOME']),
                     ':b' => $requestData['TELEFONE'],
                     ':c' => $requestData['ENDERECO'],
                     ':d' => $requestData['RG'],
@@ -66,5 +66,4 @@
             }
         }
     }
-
     echo json_encode($dados);

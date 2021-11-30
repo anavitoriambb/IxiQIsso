@@ -32,10 +32,12 @@ $(document).ready(function() {
                     }
                 }
             })
-
         })
+
         $('.btn-save').show()
+
         $('.btn-save').attr('data-operation', 'insert')
+
         $('#modal-voluntarios').modal('show')
     })
 })
