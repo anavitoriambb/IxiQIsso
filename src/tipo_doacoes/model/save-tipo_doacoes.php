@@ -40,7 +40,7 @@
                     ':id' => $ID,
                     ':a' => $requestData['QUANTIDADE'],
                     ':b' => $requestData['VALOR'],
-                    ':c' => $requestData['DESCRICAO']
+                    ':c' => utf8_decode($requestData['DESCRICAO'])
                 ));
                 $dados = array(
                     "tipo" => "success",
