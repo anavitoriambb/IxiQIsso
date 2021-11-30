@@ -4,7 +4,7 @@
     // Obter os dados enviados do formulário via REQUEST
     $requestData = $_REQUEST;
     // Verificação dos campos obrigatórios do formulário
-    if(empty($requestData['PORTE'])){
+    if(empty($requestData['PORTE']) || empty($requestData['DATARESGATE'])){
         // Caso a variável venha gerar um retorno com erro
         $dados = array(
             "tipo" => "error",
@@ -54,7 +54,7 @@
             } catch(PDOException $e){
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => "Não foi possível efetuar a alteração de animal."
+                    "mensagem" => "Não foi possível efetuar a alteração de animaaaaaal."
                 );
             }
         }
