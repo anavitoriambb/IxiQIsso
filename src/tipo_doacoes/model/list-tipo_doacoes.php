@@ -12,7 +12,7 @@
     $qtdeLinhas = $resultado->rowCount();
     
     $filtro = $requestData['search']['value'];
-    if( !empty( $filtro ) ){
+    if(!empty( $filtro)){
         $sql .= " AND (IDTIPO_DOACOES LIKE '$filtro%' ";
         $sql .= " OR DESCRICAO LIKE '$filtro%') ";
     }
