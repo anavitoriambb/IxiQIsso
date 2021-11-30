@@ -20,7 +20,7 @@ $(document).ready(function() {
             success: function(dado) {
                 if (dado.tipo == "success") {
                     $('.modal-body').load('src/animais/view/form-animais.html', function() {
-                        $('#DATAREGASTE').val(dado.dados.DATARESGATE)
+                        $('#DATARESGATE').val(dado.dados.DATARESGATE)
                         $('#SEXO').val(dado.dados.SEXO)
                         $('#PORTE').val(dado.dados.PORTE)
                         $('#IDANIMAIS').val(dado.dados.IDANIMAIS)
