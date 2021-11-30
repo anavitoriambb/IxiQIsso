@@ -5,7 +5,7 @@
 
 /* .bg-jumbo {
     background: linear-gradient(to bottom, #e67817 13%, #cf8b4f 100%);
-}
+}*/
 
 body {
     --space-xs: 0.5rem;
@@ -19,7 +19,7 @@ body {
 }
 
 
-/* Serviços section 
+/* Serviços section */
 
 section {
     padding: 100px 0;
@@ -52,7 +52,7 @@ section h3.section-subheading {
 }
 
 
-/* End Serviços section 
+/* End Serviços section */
 
 :root {
     --direction: ltr;
@@ -72,21 +72,21 @@ section h3.section-subheading {
 }
 
 
-/* Alternate direction 
+/* Alternate direction */
 
 .article:nth-child(even) {
     direction: var(--direction-alt);
 }
 
 
-/* Revert direction on child elements 
+/* Revert direction on child elements */
 
 .article>* {
     direction: var(--direction);
 }
 
 
-/* Other page styling
+/* Other page styling*/
 
 .section-wrap {
     margin-inline-start: auto;
@@ -148,7 +148,7 @@ section h3.section-subheading {
         clear: both;
     }
 }
-
+/*
 
 :root {
     font-size: 10px;
