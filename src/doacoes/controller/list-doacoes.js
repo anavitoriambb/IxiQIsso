@@ -15,7 +15,7 @@ $(document).ready(function() {
             },
             {
                 "data": 'DATAENTRADA',
-                "className": 'date'
+                "className": 'text-center'
             },
           
             {

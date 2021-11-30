@@ -4,7 +4,7 @@
     // Obter os dados enviados do formulário via REQUEST
     $requestData = $_REQUEST;
     // Verificação dos campos obrigatórios do formulário
-    if(empty($requestData['PORTE']) || empty($requestData['DATARESGATE'])){
+    if(empty($requestData['PORTE'])){
         // Caso a variável venha gerar um retorno com erro
         $dados = array(
             "tipo" => "error",
@@ -20,7 +20,7 @@
             try{
                 $stmt = $pdo->prepare('INSERT INTO ANIMAIS (DATARESGATE, SEXO, PORTE, USUARIO_IDUSUARIO, ESPECIE_IDESPECIE) VALUES (:a, :b, :c, :d, :e)');
                 $stmt->execute(array(
-                    ':a' => $requestData['DATARESGATE'],
+                    ':a' => utf8_decode($requestData['DATARESGATE']),
                     ':b' => utf8_decode($requestData['SEXO']),
                     ':c' => utf8_decode($requestData['PORTE']),
                     ':d' => $requestData['USUARIO_IDUSUARIO'],
