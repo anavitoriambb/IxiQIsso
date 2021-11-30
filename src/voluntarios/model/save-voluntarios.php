@@ -1,11 +1,8 @@
 <?php
-
     // Obter nossa conexão com banco de dados
     include('../../conexao/conn.php');
-
     // Obter os dados enviados do formulário via REQUEST
     $requestData = $_REQUEST;
-
     // Verificação dos campos obrigatórios do formulário
     if(empty($requestData['NOME'])){
         // Caso a variável venha gerar um retorno com erro
@@ -17,9 +14,8 @@
         // Caso a variável exista e tenha conteúdo, vamos gerar uma requisição
         $ID = isset($requestData['IDVOLUNTARIOS']) ? $requestData['IDVOLUNTARIOS'] : '';
         $operacao = isset($requestData['operacao']) ? $requestData['operacao'] : '';
-
         // verificação se é para cadastrar um novo registro
-        if($operacao == 'insert'){
+        if($operacao == 'insert'){       
             try{
                 $stmt = $pdo->prepare('INSERT INTO VOLUNTARIOS (NOME, TELEFONE, ENDERECO, RG, EMAIL, TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS, USUARIO_IDUSUARIO) VALUES (:a, :b, :c, :d, :e, :f, :g)');
                 $stmt->execute(array(
@@ -61,9 +57,10 @@
             } catch(PDOException $e){
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => "Não foi possível efetuar a alteração do voluntário."
+                    "mensagem" => "Não foi possível efetuar a alteração de voluntário."
                 );
             }
         }
     }
     echo json_encode($dados);
+    
