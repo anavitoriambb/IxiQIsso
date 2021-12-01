@@ -27,6 +27,7 @@ $(document).ready(function() {
                         $('#EMAIL').val(dado.dados.EMAIL)
                         $('#ATUACAO').val(dado.dados.ATUACAO)
                         $('#IDVOLUNTARIOS').val(dado.dados.IDVOLUNTARIOS)
+
                         var tipo_voluntario = dado.dados.TIPO_VOLUNTARIOS_IDTIPO_VOLUNTARIOS
                         $.ajax({
                             type: 'POST',

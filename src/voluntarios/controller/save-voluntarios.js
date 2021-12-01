@@ -8,7 +8,7 @@ $(document).ready(function() {
             dataType: 'json',
             assync: true,
             data: dados,
-            url: 'src/tipo_voluntarios/model/save-tipo_voluntarios.php',
+            url: 'src/voluntarios/model/save-voluntarios.php',
             success: function(dados) {
                 Swal.fire({
                     title: 'Refúgio Pet Lins',
@@ -16,8 +16,8 @@ $(document).ready(function() {
                     icon: dados.tipo,
                     confirmButtonText: 'OK'
                 })
-                $('#modal-tipo_voluntarios').modal('hide')
-                $('#table-tipo_voluntarios').DataTable().ajax.reload()
+                $('#modal-voluntarios').modal('hide')
+                $('#table-voluntarios').DataTable().ajax.reload()
             }
         })
     })
