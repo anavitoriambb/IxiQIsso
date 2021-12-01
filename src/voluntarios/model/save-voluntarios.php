@@ -21,7 +21,7 @@
                 $stmt->execute(array(
                     ':a' => utf8_decode($requestData['NOME']),
                     ':b' => $requestData['TELEFONE'],
-                    ':c' => $requestData['ENDERECO'],
+                    ':c' => utf8_decode($requestData['ENDERECO']),
                     ':d' => $requestData['RG'],
                     ':e' => $requestData['EMAIL'],
                     ':f' => utf8_decode($requestData['ATUACAO']),
@@ -45,7 +45,7 @@
                     ':id' => $ID,
                     ':a' => utf8_decode($requestData['NOME']),
                     ':b' => $requestData['TELEFONE'],
-                    ':c' => $requestData['ENDERECO'],
+                    ':c' => utf8_decode($requestData['ENDERECO']),
                     ':d' => $requestData['RG'],
                     ':e' => $requestData['EMAIL'],
                     ':f' => utf8_decode($requestData['ATUACAO']),
