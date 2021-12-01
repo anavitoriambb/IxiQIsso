@@ -54,7 +54,7 @@
             } catch(PDOException $e){
                 $dados = array(
                     "tipo" => "error",
-                    "mensagem" => "Não foi possível efetuar a alteração de animaaaaaal."
+                    "mensagem" => "Não foi possível efetuar a alteração de animal."
                 );
             }
         }
