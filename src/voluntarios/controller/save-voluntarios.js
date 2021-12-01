@@ -1,7 +1,7 @@
 $(document).ready(function() {
     $('.btn-save').click(function(e) {
         e.preventDefault()
-        let dados = $('#form-tipo_voluntarios').serialize()
+        let dados = $('#form-voluntarios').serialize()
         dados += `&operacao=${$('.btn-save').attr('data-operation')}`
         $.ajax({
             type: 'POST',
